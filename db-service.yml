@@ -1,10 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: db-service
+  name: db-app-service
+  labels:
+      name: db-app-service
+      app: guestbook-app
 spec:
   selector:
-    app: guestbook-app
+      name: db-app-pod
+      app: guestbook-app
   ports:
   - port: 6379
     targetPort: 6379

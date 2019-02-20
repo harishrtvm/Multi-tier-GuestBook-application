@@ -6,13 +6,13 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      name: db-pod
+      name: db-app-pod
       app: guestbook-app
   template:
     metadata:
-      name: db-pod
+      name: db-app-pod
       labels:
-        name: db-pod
+        name: db-app-pod
         app: guestbook-app
     spec:
       containers:

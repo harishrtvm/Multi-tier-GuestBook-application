@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-app-deployment
+spec:
+  template:
+    replicas: 1
+    metadata:
+      name: web-app-pod
+      labels:
+        app: guestbook-app
+    spec:
+      containers:
+        - name: web-app
+          image: kubernetes/guestbook:v2
+      ports:
+        - containerPort: 80
+  selector:
+    matchLabels:
+      app: guestbook-app

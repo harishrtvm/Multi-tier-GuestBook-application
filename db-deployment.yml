@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: db-deployemnt
+spec:
+  selector:
+    matchLabels:
+      app: guestbook-app
+  template:
+    metadata:
+      labels:
+        app: guestbook-app
+    spec:
+      containers:
+      - name: db
+        image: redis
+      ports:
+        - containerPort: 6379

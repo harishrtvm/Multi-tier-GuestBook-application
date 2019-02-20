@@ -3,11 +3,12 @@ kind: Deployment
 metadata:
   name: web-app-deployment
 spec:
+  replicas: 1
   template:
-    replicas: 1
     metadata:
       name: web-app-pod
       labels:
+        name: web-app-pod
         app: guestbook-app
     spec:
       containers:
@@ -17,4 +18,5 @@ spec:
         - containerPort: 80
   selector:
     matchLabels:
+      name: web-app-pod
       app: guestbook-app

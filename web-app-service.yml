@@ -6,7 +6,7 @@ metadata:
       name: web-app-service
       app: guestbook-app
 spec:
-  type: LoadBalancer
+  type: NodePort
   ports:
     - targetPort: 80
       port: 80

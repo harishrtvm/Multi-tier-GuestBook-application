@@ -11,4 +11,4 @@ spec:
     role: slave
   ports:
   - port: 6379
-    targetPort: redis-server
+    targetPort: 6379

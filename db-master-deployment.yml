@@ -8,8 +8,9 @@ metadata:
 spec:
   replicas: 1
   selector:
-    app: redis
-    role: master
+    matchLabels:
+      app: redis
+      role: master
   template:
     metadata:
       name: redis
@@ -19,6 +20,6 @@ spec:
     spec:
       containers:
         - name: redis-master
-          image: redis:2.8.23
+          image: redis
           ports:
             - containerPort: 6379
